@@ -1,0 +1,20 @@
+<h2>Javascript Books</h2>
+
+<div class="book-section">
+    <div class="card" *ngFor="let book of books">
+       
+        <div class="container">
+            <h4>
+                <a [routerLink]="['/books', 'details', book.id]">{{ book.title }}</a>
+            </h4>
+            <p>{{ book.author }}</p>
+        </div>
+
+         <!--img src="https://picsum.photos/300/150" alt="Avatar" style="width:100%"-->
+
+         <p>Already read: {{book.alreadyRead}}</p>
+         <button class="mb-2" (click)="delete(book.id)">delete book</button>
+    </div>
+</div>
+<!--ng-container *ngComponentOutlet="confirmDialog" (confirm)="delete(book.id)"></ng-container-->
+

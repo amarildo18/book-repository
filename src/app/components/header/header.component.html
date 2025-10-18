@@ -1,0 +1,13 @@
+<ul>
+    <li><a routerLink="home">home</a></li>
+    <li><a routerLink="books">Books</a></li>
+    <li><a routerLink="contacts">Contacts</a></li>
+    <li>
+        <a routerLink="login" *ngIf="isAuth$ | async;" (click)="logout()"> logout</a>
+    
+        <a routerLink="#" *ngIf="!(isAuth$ | async);" (click)="login()">
+            login
+        </a>
+       
+    </li>
+</ul>
