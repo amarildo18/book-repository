@@ -15,7 +15,7 @@ import { Router } from '@angular/router';
   styleUrl: './login.component.css'
 })
 export class LoginComponent {
-  //constructor(private readonly authService: AuthServices/* , private readonly employeeService: EmployeeService */){}
+
   readonly authService = inject(AuthService);
   private readonly router = inject(Router);
 
@@ -24,7 +24,7 @@ export class LoginComponent {
   login(){
     if(this.credentials.email && this.credentials.password){
       this.authService.login(this.credentials).subscribe(respose =>{
-        this.router.navigate(['home']);
+        this.router.navigate(['./home']);
       });
 
     }

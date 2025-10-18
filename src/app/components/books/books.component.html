@@ -1,20 +1,35 @@
 <h2>Javascript Books</h2>
 
+
+<div class="filter-section">
+    <label class="container">All Books
+        <input type="radio" name="filtro" checked="checked" (click)="filterBooks(1)">
+        <span class="checkmark"></span>
+    </label>
+
+    <label class="container">Read Books
+        <input type="radio" name="filtro" (click)="filterBooks(2)">
+        <span class="checkmark"></span>
+    </label>
+
+    <label class="container">Not Read
+        <input type="radio" name="filtro" (click)="filterBooks(3)">
+        <span class="checkmark"></span>
+    </label>
+</div>
 <div class="book-section">
     <div class="card" *ngFor="let book of books">
-       
+
         <div class="container">
-            <h4>
-                <a [routerLink]="['/books', 'details', book.id]">{{ book.title }}</a>
-            </h4>
+            <a [routerLink]="['/books', 'details', book.id]">
+                <h4>{{ book.title }}</h4>
+            </a>
             <p>{{ book.author }}</p>
         </div>
 
-         <!--img src="https://picsum.photos/300/150" alt="Avatar" style="width:100%"-->
-
-         <p>Already read: {{book.alreadyRead}}</p>
-         <button class="mb-2" (click)="delete(book.id)">delete book</button>
+        <img src="assets/images/{{book.imageUrl}}" alt="Avatar">
+        <p>Already Read: {{ book.alreadyRead ? '✅' : '❌' }}</p>
+        
+        <button class="mb-2" (click)="delete(book.id)">delete book</button>
     </div>
 </div>
-<!--ng-container *ngComponentOutlet="confirmDialog" (confirm)="delete(book.id)"></ng-container-->
-

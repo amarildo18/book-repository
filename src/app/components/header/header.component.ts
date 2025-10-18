@@ -18,11 +18,11 @@ export class HeaderComponent {
 
    logout(){
     this.authService.logout().subscribe(response =>{
-       this.router.navigate(['login']);
+       this.router.navigate(['./login']);
     });
    }
 
    login(){
-    this.router.navigate(['login']);
+    this.router.navigate(['./login']);
    }
 }

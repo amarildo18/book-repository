@@ -2,15 +2,29 @@ ul{
     display: flex;
     list-style: none;
     justify-content: space-evenly;
-    background: cornflowerblue;
+    background: #043959;
     padding: 20px 0;
     margin: 0;
     color: #fff;
     font-family: sans-serif;
 }
 
+ul li{
+    padding:5px;
+}
+
+a{
+    color:#043959;
+}
+
+ul li a:hover{
+    background: #0a4b78;
+}
+
 ul li a{
    text-decoration: none;
     color: #fff;
     font-weight: 600;
+    padding: 20px 60px;
+    margin: 16px 0;
 }
